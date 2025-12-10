@@ -1,0 +1,22 @@
+<nav class="navbar">
+  <div class="logo">
+    <img src="assets/mylogo.png" alt="MyTrip Logo" class="logo-img" />
+    
+  </div>
+
+  <!-- Mobile Menu Toggle -->
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+  <ul class="nav-links">
+    <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+
+    <!-- LOGOUT BUTTON -->
+    <li *ngIf="isLoggedIn">
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</nav>

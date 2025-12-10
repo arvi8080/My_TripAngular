@@ -1,0 +1,52 @@
+
+<div class="trip-container">
+
+  <div class="bg-image"></div>
+
+  <div class="trip-box">
+
+    <h2>AI Trip Planner ✈️</h2>
+
+    <form (ngSubmit)="generateTrip()">
+
+      <input type="date" [(ngModel)]="startDate" name="startDate" required>
+      <input type="date" [(ngModel)]="endDate" name="endDate" required>
+
+      <select [(ngModel)]="tripType" name="tripType" required>
+        <option value="" disabled>Select Trip Type</option>
+        <option>Adventure</option>
+        <option>Family</option>
+        <option>Romantic</option>
+        <option>Solo</option>
+        <option>Relax</option>
+      </select>
+
+      <input type="text" [(ngModel)]="destination" name="destination" placeholder="Destination" required>
+
+      <input type="number" [(ngModel)]="budget" name="budget" placeholder="Budget (INR)" required>
+
+      <button type="submit" [disabled]="loading">
+        {{ loading ? "Generating..." : "Generate Itinerary" }}
+      </button>
+
+    </form>
+
+    <!-- Loader -->
+    <div class="loader" *ngIf="loading"></div>
+
+    <!-- Timeline Card -->
+    <div class="card" *ngIf="timeline.length > 0">
+      <h3>📅 Your Itinerary</h3>
+
+      <div *ngFor="let day of timeline" class="timeline-item">
+        <div class="dot"></div>
+        <div class="content">
+          <h4>{{ day.title }}</h4>
+          <p>{{ day.details }}</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

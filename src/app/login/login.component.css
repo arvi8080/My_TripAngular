@@ -1,0 +1,104 @@
+/* Full Page Center */
+.login-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Animated Overlay */
+.bg-overlay {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  filter: blur(120px);
+  animation: float 6s infinite alternate;
+}
+
+@keyframes float {
+  0%   { transform: translate(-50px, -30px); }
+  100% { transform: translate(50px, 30px); }
+}
+
+/* Glass Login Box */
+.login-box {
+  position: relative;
+  width: 350px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 18px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Title */
+.login-box h2 {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+/* Input Group */
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.input-group input::placeholder {
+  color: #e5e7eb;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border: none;
+  background: #10b981;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+/* Error message */
+.error {
+  color: #ffbdbd;
+  margin-top: 10px;
+}
+
+/* Register Link */
+.register-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.register-text a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}

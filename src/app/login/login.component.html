@@ -1,0 +1,35 @@
+<div class="login-container">
+  <div class="bg-overlay"></div>
+
+  <div class="login-box">
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Login to continue</p>
+
+    <div class="input-group">
+      <input
+        type="text"
+        placeholder="Email Address"
+        [(ngModel)]="email"
+        name="email"
+      />
+    </div>
+
+    <div class="input-group">
+      <input
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+        name="password"
+      />
+    </div>
+
+    <button class="login-btn" (click)="login()">Login</button>
+
+    <p *ngIf="error" class="error">{{ error }}</p>
+
+    <p class="register-text">
+      Don’t have an account?
+      <a routerLink="/signup">Register</a>
+    </p>
+  </div>
+</div>
